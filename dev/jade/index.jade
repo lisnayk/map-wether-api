@@ -1,0 +1,67 @@
+doctype
+html(lang=en)
+	head
+		block title
+			title GoogleMap API | OpenWeatherMap API
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible' content='IE=edge')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		link(rel="stylesheet", href="./assets/css/bootstrap.min.css")
+		// Custom Styles
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Abel")
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Sans")
+		link(rel="stylesheet", href="./assets/css/style.css")
+		// HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+		// WARNING: Respond.js doesn't work if you view the page via file:
+		<!--[if lt IE 9]
+		script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+		script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+		[endif]-->
+		// JQuery
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js')
+		script(src='./assets/js/bootstrap.min.js')
+		script(src='./assets/js/script.js')
+		script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsClidEBesjp5bErRfKuwufIstjGNQ1w0&callback=initMap")
+	body
+		.wrapper
+			header
+				div.line-bg
+					nav.navbar.navbar-default
+						.container
+							.navbar-header
+								button.navbar-toggle(data-toggle="collapse", data-target=".navbar-collapse")
+									span.sr-only Toggle navigation
+									span.icon-bar
+									span.icon-bar
+									span.icon-bar
+								a.navbar-brand.visible-xs.visible-md(href="#") Сибинжгеоком
+							.collapse.navbar-collapse
+								ul.nav.navbar-nav
+									block menu
+										li.active
+											a(href="index.html") Главная
+				a.logo(href="#")
+			section 
+				.container
+					div.row
+						div.col-lg-6
+							iframe(width="560" height="315" src="https://www.youtube.com/embed/z4Oape9TI0Q" frameborder="0" allowfullscreen)
+							div.message
+						div.col-lg-6
+							div.map-holder
+								div#map
+								ul.info-items
+									each val in [1, 2, 3, 4, 5]
+										li(class='item item-'+val)
+											div.item-title.bg-primary Title #{val}
+												span.glyphicon.glyphicon-chevron-left
+											div.item-content  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem expedita repellendus harum, cupiditate veritatis neque, ab molestiae tempore voluptas suscipit ipsa error ratione numquam molestias a cumque quisquam eaque alias.
+					div.row
+						h2 Wind informer
+						h3.name 
+						div.compas-holder
+							div.compas 
+								span.speed 12
+								span.text m/s
+								div.rotate
+									div.arrow.glyphicon.glyphicon-play
